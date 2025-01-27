@@ -2,15 +2,21 @@
 
 Tervetuloa *Tietotekniikan oppikirjastoon*! Tämä repositorio on suunniteltu tarjoamaan selkeitä ja helposti ymmärrettäviä ohjeita tietotekniikan insinööriopintojen tueksi. Täältä löydät oppaita, komentoja ja vinkkejä aiheisiin kuten Linux, Windows, kytkimet ja tietoverkot.
 
-## Sisältö
+## Iot & Web
 
-### Hakemistot ja tiedostot
+### Linux
 - **[Linux-tiedostohallinta](Linux_tiedostohallinta.md)**
   - Ohjeita tiedostojen ja hakemistojen käsittelyyn Linuxissa.
-
-### Järjestelmänhallinta
 - **[Linux-järjestelmänhallinta](Linux_jarjestelmahallinta.md)**
   - Komentoja ja vinkkejä järjestelmänhallintaan Linuxissa.
+
+### Git
+- **[Git asennus ja komentojen käyttö](Git_asennus_ja_kaytto.md)**
+    - Git ohjelmiston asennus ja perus komentojen käyttö
+- **[Git-palvelimen linkittäminen ja SSH-avaimen luominen](Git_Remote_ja_SSH.md)**
+    - Git ohjelmiston asennus ja perus komentojen käyttö
+
+## Tietoverkot
 
 ### Kytkimen konfigurointi
 - **[Kytkimen peruskonfigurointi](Kytkimen_konfigurointi.md)**
