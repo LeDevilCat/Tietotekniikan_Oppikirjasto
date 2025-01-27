@@ -1,74 +1,114 @@
 # Kytkimen peruskonfigurointi
 
-Tässä osiossa käsitellään Cisco-kykimen perusasetuksia ja tärkeimpiä komentoja, jotka auttavat laitteen ensikäyttöä ja hallintaa.
+Tässä osiossa käsitellään Cisco-kytkimen perusasetuksia, joita käytetään esimerkiksi Cisco Packet Tracer -tehtävissä. Ohjeet sisältävät yleisimmät komennot ja niiden käyttötavat.
 
-## Komennot
+---
+
+## Komennot ja niiden käyttö
 
 ### **enable**
 - **Selitys:** Siirtyy EXEC-tilaan, jossa voidaan suorittaa hallintatason komentoja.
 - **Käyttö:**
   ```
-  S1> enable
-  S1#
+  switch> enable
+  switch#
   ```
 
 ### **configure terminal**
 - **Selitys:** Siirtyy globaaliin konfigurointitilaan, jossa voidaan muokata kytkimen asetuksia.
 - **Käyttö:**
   ```
-  S1# configure terminal
-  S1(config)#
+  switch# configure terminal
+  switch(config)#
   ```
 
-### **enable password <salasana>**
-- **Selitys:** Asettaa salasanan EXEC-tilaan siirtymiselle.
+### **exit**
+- **Selitys:** Palauttaa edelliselle komentotasolle. Esimerkiksi globaaliasta konfigurointitilasta EXEC-tilaan.
 - **Esimerkki:**
   ```
-  S1(config)# enable password vahvaSalasana123
+  switch(config-if)# exit
+  switch(config)# exit
+  switch#
+  ```
+
+### **interface vlan 1**
+- **Selitys:** Konfiguroi VLAN 1 -rajapinnan hallintaa varten. VLAN 1 on oletusarvoinen hallintarajapinta.
+- **Käyttö:**
+  ```
+  switch(config)# interface vlan 1
+  switch(config-if)# ip address 192.168.1.1 255.255.255.0
+  switch(config-if)# no shutdown
   ```
 
 ### **line console 0**
-- **Selitys:** Siirtyy konsoliyhteyden asetuksiin.
+- **Selitys:** Määrittää konsoliyhteyden asetuksia.
 - **Alikomennot:**
   - `password <salasana>`: Asettaa konsoliyhteyden salasanan.
   - `login`: Ottaa salasanan käyttöön konsoliyhteydessä.
 - **Esimerkki:**
   ```
-  S1(config)# line console 0
-  S1(config-line)# password salasanani
-  S1(config-line)# login
+  switch(config)# line console 0
+  switch(config-line)# password letmein
+  switch(config-line)# login
   ```
 
-### **banner motd "<viesti>"**
-- **Selitys:** Asettaa Message of the Day (MOTD) -viestin, joka näkyy käyttäjälle sisäänkirjautumisen yhteydessä.
+### **hostname**
+- **Selitys:** Asettaa kytkimelle nimen, joka näkyy komentokehotteessa.
 - **Esimerkki:**
   ```
-  S1(config)# banner motd "Tervetuloa verkkoomme!"
+  switch(config)# hostname S1
+  S1(config)#
   ```
 
-### **interface vlan 1**
-- **Selitys:** Konfiguroi VLAN 1 -rajapinnan hallintaa varten.
+### **enable password**
+- **Selitys:** Määrittää salasanan EXEC-tilaan siirtymiselle.
 - **Esimerkki:**
   ```
-  S1(config)# interface vlan 1
-  S1(config-if)# ip address 192.168.1.1 255.255.255.0
-  S1(config-if)# no shutdown
+  switch(config)# enable password c1$c0
+  ```
+
+### **enable secret**
+- **Selitys:** Määrittää salatun salasanan EXEC-tilaan siirtymiselle. Tämä on turvallisempi vaihtoehto kuin `enable password`.
+- **Esimerkki:**
+  ```
+  switch(config)# enable secret itsasecret
   ```
 
 ### **service password-encryption**
-- **Selitys:** Salakirjoittaa kaikki laitteeseen tallennetut salasana-arvot.
+- **Selitys:** Salakirjoittaa kaikki tekstimuotoiset salasanat.
 - **Esimerkki:**
   ```
-  S1(config)# service password-encryption
+  switch(config)# service password-encryption
   ```
 
-### **enable secret <salasana>**
-- **Selitys:** Asettaa EXEC-tilaan vahvemman, salatun salasanan.
+### **banner motd**
+- **Selitys:** Asettaa Message of the Day (MOTD) -viestin, joka näkyy käyttäjälle sisäänkirjautumisen yhteydessä.
 - **Esimerkki:**
   ```
-  S1(config)# enable secret salainenSalasana123
+  switch(config)# banner motd "Tämä on suojattu järjestelmä. Luvaton pääsy kielletty!"
+  ```
+
+### **show running-config**
+- **Selitys:** Näyttää käynnissä olevan konfiguraation (running-config).
+- **Esimerkki:**
+  ```
+  switch# show running-config
+  ```
+
+### **copy running-config startup-config**
+- **Selitys:** Tallentaa käynnissä olevan konfiguraation (running-config) pysyväksi konfiguraatioksi (startup-config).
+- **Esimerkki:**
+  ```
+  switch# copy running-config startup-config
+  ```
+
+### **show ip interface brief**
+- **Selitys:** Näyttää yhteenvedon kytkimen rajapinnoista ja niiden tilasta.
+- **Esimerkki:**
+  ```
+  switch# show ip interface brief
   ```
 
 ---
 
-Näillä komennoilla voit konfiguroida kytkimen turvallisesti ja tehokkaasti. Muista tallentaa muutokset suorittamalla **write memory** tai **copy running-config startup-config** kytkimen asetusten pysyväksi tallentamiseksi.
+Näillä komennoilla voit suorittaa kytkimen peruskonfiguroinnin, tallentaa asetukset ja varmistaa niiden toimivuuden. Muista testata jokaisen vaiheen jälkeen konfiguraatio ja tallentaa muutokset pysyvästi!
