@@ -9,7 +9,7 @@ Tervetuloa *Tietotekniikan oppikirjastoon*! Tämä repositorio on suunniteltu ta
   - Ohjeita tiedostojen ja hakemistojen käsittelyyn Linuxissa.
 
 ### Järjestelmänhallinta
-- **[Linux-järjestelmänhallinta](Linux_jarjestelmanhallinta.md)**
+- **[Linux-järjestelmänhallinta](Linux_jarjestelmahallinta.md)**
   - Komentoja ja vinkkejä järjestelmänhallintaan Linuxissa.
 
 ### Kytkimen konfigurointi
