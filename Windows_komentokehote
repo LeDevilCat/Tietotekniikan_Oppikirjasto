@@ -1,0 +1,70 @@
+# Windows Command Prompt -komennot
+
+Tässä ohjeessa käydään läpi yleisiä Windowsin komentokehotteessa (Command Prompt, cmd) käytettäviä verkkokomentoja.
+
+## **ipconfig**
+- **Selitys:** Näyttää tietokoneen verkkosovittimen asetukset, kuten IP-osoitteen ja MAC-osoitteen.
+- **Käyttö:**
+  ```
+  ipconfig
+  ```
+  Näyttää perustiedot verkkoyhteydestä.
+- **Laajennettu versio:**
+  ```
+  ipconfig /all
+  ```
+  Näyttää yksityiskohtaiset tiedot, mukaan lukien MAC-osoitteen ja DHCP-tiedot.
+
+## **arp -a**
+- **Selitys:** Näyttää ARP-taulukon, joka yhdistää IP-osoitteet MAC-osoitteisiin.
+- **Käyttö:**
+  ```
+  arp -a
+  ```
+
+## **ping**
+- **Selitys:** Testaa verkkoyhteyden toimivuutta lähettämällä ICMP-paketteja kohdelaitteelle.
+- **Käyttö:**
+  ```
+  ping 192.168.1.1
+  ```
+  Pingaa IP-osoitetta `192.168.1.1` ja tarkistaa vasteajan.
+
+## **tracert**
+- **Selitys:** Näyttää reitin, jonka paketit kulkevat matkalla kohdeosoitteeseen.
+- **Käyttö:**
+  ```
+  tracert www.google.com
+  ```
+  Näyttää, mitkä reitittimet liikenne kulkee läpi matkalla Googleen.
+
+## **nslookup**
+- **Selitys:** Tarkistaa verkkotunnuksen (DNS) IP-osoitteet.
+- **Käyttö:**
+  ```
+  nslookup www.google.com
+  ```
+  Palauttaa `www.google.com`-verkkotunnuksen IP-osoitteen.
+
+## **netstat**
+- **Selitys:** Näyttää tietoa aktiivisista verkkoyhteyksistä ja kuuntelevista porteista.
+- **Käyttö:**
+  ```
+  netstat -an
+  ```
+  Näyttää kaikki aktiiviset yhteydet ja niiden tilat.
+
+## **shutdown**
+- **Selitys:** Sammuttaa tai käynnistää tietokoneen uudelleen komentoriviltä.
+- **Käyttö:**
+  ```
+  shutdown /s /t 0
+  ```
+  Sammuttaa tietokoneen heti.
+- **Uudelleenkäynnistys:**
+  ```
+  shutdown /r /t 0
+  ```
+  Käynnistää tietokoneen uudelleen heti.
+
+Nämä komennot ovat hyödyllisiä verkon vianmäärityksessä ja järjestelmän hallinnassa Windows-ympäristössä.

@@ -31,6 +31,14 @@ Tässä osiossa käsitellään Cisco-kytkimen perusasetuksia, joita käytetään
   switch#
   ```
 
+### **no ip domain-lookup**
+- **Selitys:** Poistaa käytöstä kytkimen oletusarvoisen toiminnon, jossa se yrittää ratkaista virheelliset komennot DNS-palvelimen avulla.
+- **Käyttö:**
+  ```
+  switch(config)# no ip domain-lookup
+  ```
+- **Hyöty:** Nopeuttaa virheellisten komentojen käsittelyä, koska kytkin ei yritä ratkaista niitä verkkotunnuksiksi.
+
 ### **interface vlan 1**
 - **Selitys:** Konfiguroi VLAN 1 -rajapinnan hallintaa varten. VLAN 1 on oletusarvoinen hallintarajapinta.
 - **Käyttö:**
@@ -38,6 +46,13 @@ Tässä osiossa käsitellään Cisco-kytkimen perusasetuksia, joita käytetään
   switch(config)# interface vlan 1
   switch(config-if)# ip address 192.168.1.1 255.255.255.0
   switch(config-if)# no shutdown
+  ```
+
+### **show ip interface brief**
+- **Selitys:** Näyttää yhteenvedon kytkimen rajapinnoista ja niiden tilasta.
+- **Esimerkki:**
+  ```
+  switch# show ip interface brief
   ```
 
 ### **line console 0**
@@ -101,13 +116,22 @@ Tässä osiossa käsitellään Cisco-kytkimen perusasetuksia, joita käytetään
   ```
   switch# copy running-config startup-config
   ```
+### **erase startup-config**
+- **Selitys:** Poistaa kytkimen startup-config -asetukset, eli tallennetun konfiguraation NVRAM-muistista.
+- **Käyttö:**
+  ```
+  switch# erase startup-config
+  ```
+- **Huom:** Käyttämällä tätä komentoa palautat kytkimen alkuperäiseen tilaan ilman aiemmin tallennettuja asetuksia.
 
-### **show ip interface brief**
-- **Selitys:** Näyttää yhteenvedon kytkimen rajapinnoista ja niiden tilasta.
-- **Esimerkki:**
+### **reload**
+- **Selitys:** Käynnistää kytkimen uudelleen.
+- **Käyttö:**
   ```
-  switch# show ip interface brief
+  switch# reload
   ```
+- **Vahvistus:** Komento pyytää vahvistusta ennen uudelleenkäynnistystä. Voit perua toiminnon painamalla `n` (no).
+- **Huom:** Jos startup-config on poistettu ennen reload-komennon suorittamista, kytkin käynnistyy oletusasetuksilla.
 
 ---
 
