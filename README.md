@@ -16,6 +16,10 @@ Tervetuloa *Tietotekniikan oppikirjastoon*! Tämä repositorio on suunniteltu ta
 - **[Git-palvelimen linkittäminen ja SSH-avaimen luominen](Git_Remote_ja_SSH.md)**
     - Git ohjelmiston asennus ja perus komentojen käyttö
 
+### HTML
+- **[Nettisivujen vieminen palvelimeen](nettisivujen-vieminen-palvelimeen.md)**
+    - HTML-tehtävien vieminen TAMK:n pilvipalvelimeen
+
 ## Tietoverkot
 
 ### Kytkimen konfigurointi
