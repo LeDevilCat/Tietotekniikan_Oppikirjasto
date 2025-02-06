@@ -74,7 +74,7 @@ Nyt tiedostojen pitäisi olla palvelimen puolella. Jos jostain syystä tämäkä
 
 Avaa palvelimen terminaali (TER 2) ja kirjoita seuraava komento:
 ```
-sudo mv week_XX ../../var/www/html
+sudo mv week_XX/ /var/www/html/
 ```
 Edellä mainittu komento siirtää "week_XX"-kansion hakemistoon, jossa verkkosivusi sijaitsee.
 
