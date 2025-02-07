@@ -86,3 +86,4 @@ Jos "week_XX"-kansion index.html ei toimi selaimessa:
 - Varmista, että seurasit tämän oppaan vaiheita oikein
 
 ## That's all folks!
+Lisää Linux-komentoja voit löytää tämän repositorion ["Linux-tiedostohallinta" -oppaasta](Linux_tiedostohallinta.md)
